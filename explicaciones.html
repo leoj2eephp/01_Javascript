@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      cicloFor()
+
+      function cicloFor() {
+        // Este for super primitivo se compone de 3 partes vitales
+        // 1. La variable que se crea para este ciclo.
+        // 2. Hasta cuándo se va a repetir este ciclo (hasta que dé falso).
+        // 3. Lo que se va a ejecutar una vez leídas todas las líneas de código
+        // que estén dentro del ciclo for. Qué significa x++?
+        // x++ le suma 1 valor de x. Es para ahorrarse el x=x+1.
+        for(var x=0; x<5; x++) {
+          console.log(x)
+        }
+      }
+
+      // bloqueSwitch(20, 5, "multiplicación");
+      // Como en todos los lenguajes de programación, las funciones pueden recibir parámetros
+      // Aquí estamos definiendo que la función espera recibir 3 valores
+      function bloqueSwitch(num1, num2, operacion) {
+        var total = 0;
+        // Lo que pones entre paréntesis en switch es la variables que
+        // se va a evaluar y comparar con los casos que tú especifiques
+        switch (operacion) {
+          case "suma":
+            total = num1 + num2;
+            break;
+          case "resta":
+            total = num1 - num2;
+            break;
+          case "multiplicación":
+            total = num1 * num2;
+            break;
+          case "división":
+            total = num1 / num2;
+            break;
+          default:
+            total = "Tipo de operación no soportada";
+        }
+        /* if (operacion == "suma") {
+          total = num1 + num2
+        } else if (operacion == "resta") {
+          total = num1 - num2
+        } else if (operacion == "multiplicación") {
+          total = num1 * num2
+        } else if (operacion == "división") {
+          total = num1 / num2
+        } else {
+          total = "Tipo de operación no soportada"
+        } */
+        console.log(total);
+      }
+
+      function condiciones() {
+        const edad = 15;
+        // A diferencia de Python, la expresión booleana DEBE ir entre paréntesis
+        // Además, el inicio y fin del bloque if está determinado por
+        // las llaves {}, no por el espacio identado como en python
+        if (edad >= 18) {
+          console.log("Mayor de edad");
+        } else {
+          console.log("Menor de edad");
+        }
+      }
+
+      function saludo() {
+        // Esta es una variable común y corriente
+        var nombre = "Francisca";
+        // También tenemos las constantes (que NO cambian valor)
+        const apellido = "Ojeda";
+        // Cuadro de diálogo visible al usuario
+        // alert("Hola Mundo")
+        // Mostrar info en la consola del desarrollador (F12)
+        console.log("Hola " + nombre + " " + apellido);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

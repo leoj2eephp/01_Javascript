@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script>
+      // PASO 1: creo la función con la que voy a enlazar el evento onclick del botón
+      function sumar() {
+        // PASO 3: tomar los valores por alguna referencia como ID
+        const num1 = document.getElementById("num1");
+        const num2 = document.querySelector("#num2");
+        const resultado = document.querySelector("#resultado");
+        // IMPORTANTE!! TODOS los atributos de HTML retornan sus valores en STRING!!
+        // Aún si pones números, estos serán devueltos como texto. Así que, si quieres
+        // operarlos aritméticamente, TIENES que transformarlos a INT.
+        // parseInt() es un método equivalente a int() de Python
+        const total = parseInt(num1.value) + parseInt(num2.value);
+        // Si asignamos un nuevo valor a la propiedad value de resultado, se modificará lo que se muestra
+        // en esa caja de texto
+        resultado.value = total;
+      }
+
+      function restar() {
+        const num1 = document.getElementById("num1");
+        const num2 = document.querySelector("#num2");
+        const resultado = document.querySelector("#resultado");
+        const total = parseInt(num1.value) - parseInt(num2.value);
+        resultado.value = total;
+      }
+      function multiplicar() {
+        const num1 = document.getElementById("num1");
+        const num2 = document.querySelector("#num2");
+        const resultado = document.querySelector("#resultado");
+        const total = parseInt(num1.value) * parseInt(num2.value);
+        resultado.value = total;
+      }
+      function dividir() {
+        const num1 = document.getElementById("num1");
+        const num2 = document.querySelector("#num2");
+        const resultado = document.querySelector("#resultado");
+        const total = parseInt(num1.value) / parseInt(num2.value);
+        resultado.value = total;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-12 mb-2">
+        <label for="num1">Número 1</label>
+        <input type="text" id="num1" class="form-control" />
+      </div>
+      <div class="col-12 mb-4">
+        <label for="num2">Número 2</label>
+        <input type="text" id="num2" class="form-control" />
+      </div>
+      <div class="col-12 mb-4">
+        <!-- PASO 2: agregar el atributo onclick al botón que quiero programar y
+            ponerle la llamada a una función que haya creado en JS -->
+        <button class="btn btn-primary" onclick="sumar()">Sumar</button>
+        <button class="btn btn-primary" onclick="restar()">Restar</button>
+        <button class="btn btn-primary" onclick="multiplicar()">
+          Multiplicar
+        </button>
+        <button class="btn btn-primary" onclick="dividir()">Dividir</button>
+      </div>
+      <div class="col-12 mb-4">
+        <input
+          type="text"
+          id="resultado"
+          placeholder="Resultado"
+          class="form-control"
+        />
+      </div>
+    </div>
+  </body>
+</html>

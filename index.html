@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <script>
+    function saludar() {
+        // Para acceder a los elementos que están dentro de HTML necesitamos acceder a ellos
+        // mediante alguna propiedad como ID, CLASS u otra.
+        // Esto lo podemos hacer a través de diferentes métodos.
+        // getElementById() espera que le pases el valor que pusiste en el atributo nombre
+        // del objeto HTML al que quieres acceder. Retorna el elemento HTML completo.
+        const nom = document.getElementById("nombre")
+        // Mostrar en un alert un saludo al nombre que se escriba
+        // console.log(nom.value)
+        // nom tiene dentro de sí los valores de toooodas las propiedades que tiene un elemento HTML
+        // Para acceder a ellas pon un punto y el nombre de la propiedad.
+        // EJ: nom.id retorna el id del HTML; nom.value retorna el value del HTML..
+        alert("HOLA " + nom.value)
+    }
+
+    function saludarAvanzado() {
+      const nom = document.getElementById("nombre")
+      // querySelector() retorna UN elemento HTML dependiendo del string que le pases
+      // Aquí tienes que hacer como en CSS, o sea, si es un ID lo que estás llamando,
+      // tienes que empezar con #, si es una clase tienes que empezar con .
+      // Si hay más de un elemento con el mismo valor, solo retorna la 1ra coincidencia
+      const ape = document.querySelector("#apellido")
+      const esBecado = document.querySelector("#beca")
+      // alert("HOLA " + nom.value + " " + ape.value)
+      var mensaje = `Hola ${nom.value} ${ape.value} - `
+      if (esBecado.checked) {
+        mensaje += "Tienes aprobada tu beca."
+      } else {
+        mensaje += "Beca no aprobada."
+      }
+      alert(mensaje)
+    }
+  </script>
+  <body>
+    <div class="container">
+        <div class="col">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control" >
+        </div>
+        <div class="col-12">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" class="form-control" />
+      </div>
+      <div class="col-12">
+          <label for="beca">Beca Junaeb</label>
+          <input type="checkbox" id="beca">
+      </div>
+        <div class="col">
+            <!-- Puedes programar todos los eventos de JS que quieras. Todos empiezan con on.
+            Dentro de onclick vamos a llamar a una function de JS que hayamos creado previamente. -->
+            <button class="btn btn-primary" onclick="saludarAvanzado()">Saludar</button>
+        </div>
+    </div>
+  </div>
+  </body>
+</html>
